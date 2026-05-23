@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fauzan Store</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial;
+    }
+
+    body{
+
+      background:
+      radial-gradient(circle at top right,
+      rgba(0,255,255,0.2),
+      transparent 25%),
+
+      radial-gradient(circle at bottom left,
+      rgba(0,100,255,0.2),
+      transparent 25%),
+
+      #050816;
+
+      color:white;
+
+      scroll-behavior:smooth;
+    }
+
+    /* NAVBAR */
+
+    .navbar{
+
+      width:100%;
+
+      display:flex;
+
+      justify-content:space-between;
+
+      align-items:center;
+
+      padding:20px 8%;
+
+      position:fixed;
+
+      top:0;
+
+      backdrop-filter:blur(10px);
+
+      background:rgba(0,0,0,0.2);
+
+      border-bottom:1px solid rgba(255,255,255,0.1);
+
+      z-index:1000;
+    }
+
+    .logo{
+
+      font-size:30px;
+
+      font-weight:bold;
+
+      color:#00c3ff;
+
+      text-shadow:0 0 20px #00c3ff;
+    }
+
+    .navbar a{
+
+      text-decoration:none;
+
+      color:white;
+
+      margin-left:30px;
+
+      transition:0.3s;
+    }
+
+    .navbar a:hover{
+
+      color:#00c3ff;
+
+      text-shadow:0 0 15px #00c3ff;
+    }
+
+    /* HERO */
+
+    .hero{
+
+      height:100vh;
+
+      display:flex;
+
+      flex-direction:column;
+
+      justify-content:center;
+
+      align-items:center;
+
+      text-align:center;
+
+      padding:20px;
+    }
+
+    .hero h1{
+
+      font-size:90px;
+
+      color:#00c3ff;
+
+      text-shadow:0 0 30px #00c3ff;
+    }
+
+    .hero p{
+
+      margin-top:20px;
+
+      font-size:24px;
+
+      color:#d6d6d6;
+    }
+
+    .btn{
+
+      margin-top:40px;
+
+      display:inline-block;
+
+      padding:18px 45px;
+
+      border-radius:40px;
+
+      background:#00c3ff;
+
+      color:white;
+
+      text-decoration:none;
+
+      font-size:20px;
+
+      font-weight:bold;
+
+      box-shadow:0 0 25px #00c3ff;
+
+      transition:0.4s;
+    }
+
+    .btn:hover{
+
+      transform:scale(1.08);
+
+      box-shadow:0 0 40px #00c3ff;
+    }
+
+    /* SECTION */
+
+    .section{
+
+      width:85%;
+
+      margin:100px auto;
+
+      padding:50px;
+
+      border-radius:35px;
+
+      background:rgba(255,255,255,0.05);
+
+      backdrop-filter:blur(15px);
+
+      border:1px solid rgba(255,255,255,0.1);
+
+      box-shadow:0 0 20px rgba(0,195,255,0.2);
+    }
+
+    .section h2{
+
+      font-size:45px;
+
+      margin-bottom:40px;
+
+      color:#00c3ff;
+
+      text-shadow:0 0 15px #00c3ff;
+    }
+
+    /* PRODUCT */
+
+    .products{
+
+      display:flex;
+
+      flex-wrap:wrap;
+
+      gap:25px;
+
+      justify-content:center;
+    }
+
+    .card{
+
+      width:280px;
+
+      padding:30px;
+
+      border-radius:25px;
+
+      background:rgba(255,255,255,0.05);
+
+      border:1px solid rgba(255,255,255,0.1);
+
+      text-align:center;
+
+      transition:0.4s;
+
+      box-shadow:0 0 15px rgba(0,195,255,0.2);
+    }
+
+    .card:hover{
+
+      transform:translateY(-10px);
+
+      box-shadow:0 0 35px #00c3ff;
+    }
+
+    .card h3{
+
+      font-size:28px;
+
+      margin-bottom:15px;
+
+      color:#00c3ff;
+    }
+
+    .price{
+
+      font-size:24px;
+
+      margin:20px 0;
+
+      color:#ffffff;
+    }
+
+    .buy{
+
+      display:inline-block;
+
+      padding:12px 30px;
+
+      border-radius:20px;
+
+      background:#00c3ff;
+
+      color:white;
+
+      text-decoration:none;
+
+      font-weight:bold;
+
+      transition:0.3s;
+    }
+
+    .buy:hover{
+
+      box-shadow:0 0 20px #00c3ff;
+    }
+
+    /* CONTACT */
+
+    .contact p{
+
+      font-size:22px;
+
+      line-height:45px;
+
+      color:#d8d8d8;
+    }
+
+    /* FOOTER */
+
+    .footer{
+
+      text-align:center;
+
+      padding:40px;
+
+      color:rgba(255,255,255,0.5);
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      .hero h1{
+
+        font-size:55px;
+      }
+
+      .hero p{
+
+        font-size:18px;
+      }
+
+      .navbar{
+
+        flex-direction:column;
+
+        gap:15px;
+      }
+
+      .products{
+
+        flex-direction:column;
+
+        align-items:center;
+      }
+
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <!-- NAVBAR -->
+
+  <div class="navbar">
+
+    <div class="logo">
+      Fauzan Store
+    </div>
+
+    <div>
+
+      <a href="#home">Home</a>
+
+      <a href="#products">Top Up</a>
+
+      <a href="#contact">Contact</a>
+
+    </div>
+
+  </div>
+
+  <!-- HERO -->
+
+  <div class="hero" id="home">
+
+    <h1>FAUZAN STORE</h1>
+
+    <p>
+      Top Up Game Murah • Cepat • Aman
+    </p>
+
+    <a href="#products" class="btn">
+      Top Up Sekarang
+    </a>
+
+  </div>
+
+  <!-- PRODUCTS -->
+
+  <div class="section" id="products">
+
+    <h2>Top Up Game</h2>
+
+    <div class="products">
+
+      <div class="card">
+
+        <h3>Free Fire</h3>
+
+        <p>70 Diamond</p>
+
+        <div class="price">
+          Rp 10.000
+        </div>
+
+        <a href="#" class="buy">
+          Beli
+        </a>
+
+      </div>
+
+
+
+      <div class="card">
+
+        <h3>Mobile Legends</h3>
+
+        <p>86 Diamond</p>
+
+        <div class="price">
+          Rp 20.000
+        </div>
+
+        <a href="#" class="buy">
+          Beli
+        </a>
+
+      </div>
+
+
+
+      <div class="card">
+
+        <h3>PUBG Mobile</h3>
+
+        <p>60 UC</p>
+
+        <div class="price">
+          Rp 15.000
+        </div>
+
+        <a href="#" class="buy">
+          Beli
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- CONTACT -->
+
+  <div class="section contact" id="contact">
+
+    <h2>Contact</h2>
+
+    <p>
+
+      WhatsApp : 08xxxxxxxxxx <br><br>
+
+      Instagram : @fauzanstore <br><br>
+
+      Email : fauzanstore@gmail.com
+
+    </p>
+
+  </div>
+
+  <!-- FOOTER -->
+
+  <div class="footer">
+
+    © 2026 Fauzan Store
+
+  </div>
+
+</body>
+</html>
